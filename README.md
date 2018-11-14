@@ -59,3 +59,15 @@
 
 #### 目录结构
 
+```javascript
+src
+├── assets          所有的资源文件（字体、图片、样式）
+├── components      编写的可复用组件
+├── constants       常量编写
+├── layouts         布局外框
+├── pages           所有页面
+├── services        所有服务
+├── index.scss      全局样式
+├── index.tsx       页面入口
+types
+```
