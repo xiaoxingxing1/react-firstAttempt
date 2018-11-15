@@ -1,11 +1,24 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import App from './App';
+import * as FastClick from 'fastclick';
+import { configure } from 'mobx';
+import 'moment/locale/zh-cn';
+import 'antd/dist/antd.min.css';
 import './index.scss';
-// import registerServiceWorker from './registerServiceWorker';
+import './app.config';
+import App from './App';
+import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root') as HTMLElement
-);
-// registerServiceWorker();
+configure({ enforceActions: true});
+
+const render = () => {
+  ReactDOM.render(
+      <App />,
+    document.getElementById('root') as HTMLElement
+  );
+};
+
+render();
+
+FastClick['attach'](document.body);
+registerServiceWorker();

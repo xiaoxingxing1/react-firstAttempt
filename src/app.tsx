@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { hot } from 'react-hot-loader';
 import './app.scss';
 
 import logo from './assets/images/logo.svg';
@@ -19,4 +20,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default hot(module)(App);

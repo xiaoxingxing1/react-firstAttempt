@@ -33,6 +33,7 @@
 - 安装支持装饰器所需依赖：`yarn add babel-plugin-transform-decorators-legacy`
 - 安装 @babel/plugin-proposal-decorators：`yarn add @babel/plugin-proposal-decorators`
 - 安装 mobx 和 mobx-react 和 mobx-react-router：`yarn add mobx mobx-react mobx-react-router`
+- 安装axios：`yarn add axios`
 - 配置babel：找到package.json中的babel，做如下配置
 ```javascript
 "babel": {
@@ -55,7 +56,18 @@
     ]
   }
 ```
-- 安装axios：`yarn add axios`
+- 配置react-hot-loader：在config下找到 webpack.config.dev.js 文件，对 babel-loader 增加 'react-hot-loader/babel'，如下：
+```javascript
+{
+    test: /\.(js|jsx|mjs)$/,
+    include: paths.appSrc,
+    loader: require.resolve('babel-loader'),
+    options: {
+      compact: true,
+      plugins: ['react-hot-loader/babel'],
+    },
+}
+```
 
 #### 目录结构
 
@@ -71,3 +83,6 @@ src
 ├── index.tsx       页面入口
 types
 ```
+
+#### 开始开发
+
